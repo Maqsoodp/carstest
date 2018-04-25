@@ -16,22 +16,18 @@ namespace Cars.Api.Controllers
             return View();
         }
 
+        [HttpGet]
         [Route("cars")]
         public ActionResult Cars()
         {
             return RedirectToAction("Index");
         }
 
+        [HttpGet]
         [Route("owners")]
         public ActionResult Owners()
         {
             return RedirectToAction("Index");
-        }
-
-        [Route("carsgroup")]
-        public ActionResult CarsGroup()
-        {
-           return RedirectToAction("Index");
         }
 
     }
