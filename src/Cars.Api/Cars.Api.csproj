@@ -43,7 +43,7 @@
   </ItemGroup>
 
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-    <Exec Command="npm start" />
+    <Exec Command="npm install &amp;&amp; npm start" />
   </Target>
 
 </Project>
