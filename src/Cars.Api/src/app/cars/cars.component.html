@@ -1,0 +1,64 @@
+<div class="container">
+
+
+  <div class="row">
+
+    <div class="col-3">
+
+      <h2>Car options</h2>
+      <br />
+      <br />
+      <button (click)="showCars($event, 'list')" type="button" class="btn btn-primary">Car list</button>
+      <br />
+      <br />
+      <button (click)="showCarsGrouped($event, 'group')" type="button" class="btn btn-primary">Owners grouped by Cars</button>
+    </div>
+
+    <div class="col-9">
+
+      <ul *ngIf="listype === 'list'">
+        <div *ngFor="let car of carsObservable | async">
+
+          <ngb-alert type="info" [dismissible]="false">
+            <h3>
+              <a href="{{car.brand}}">{{car.brand}}</a>
+            </h3>
+            <p>
+              <span>{{car.colour}}</span>
+            </p>
+          </ngb-alert>
+
+        </div>
+      </ul>
+
+      <ul *ngIf="listype === 'group'">
+          <div *ngFor="let car of carsObservable | async">
+        
+            <ngb-alert type="info" [dismissible]="false">
+              <h3>
+                <a href="{{car.brand}}">{{car.brand}}</a>
+              </h3>
+        
+              <p>Owners</p>
+              <div>
+                <ul *ngFor="let owner of car.ownerInfo">
+                  <li>
+                    <p>
+                      <span>{{owner.name}}</span> has <i>{{owner.colour || "none"}}</i>  
+                    </p>
+                  </li>
+                </ul>
+              </div>
+        
+            </ngb-alert>
+        
+          </div>
+        </ul>
+
+
+    </div>
+
+
+  </div>
+
+</div>

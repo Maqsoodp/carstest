@@ -1,0 +1,44 @@
+<div class="container">
+
+
+  <div class="row">
+
+    <div class="col-3">
+
+        <h2>Owners options</h2>
+        <br />
+        <br />
+      <button (click)="showExternal($event)" type="button" class="btn btn-primary">External (Call to Kloud Api)</button>
+      <br />
+      <br />
+      <button (click)="showInternal($event)" type="button" class="btn btn-primary">Internal (Call to local DB)</button>
+    </div>
+
+    <div class="col-9">
+      <ul>
+        <div *ngFor="let owner of ownersObservable | async">
+
+          <ngb-alert type="info" [dismissible]="false">
+            <h3>
+              <a href="{{owner.name}}">{{owner.name}}</a>
+            </h3>
+            <p>Cars</p>
+            <div>
+              <ul *ngFor="let car of owner.cars">
+                <li>
+                  <p>
+                    <span>{{car.brand}}</span>
+                    <span>{{car.colour}}</span>
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </ngb-alert>
+        </div>
+      </ul>
+    </div>
+
+
+  </div>
+
+</div>
