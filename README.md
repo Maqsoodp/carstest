@@ -53,12 +53,5 @@ Internal (Call to local DB) gets you data from Local Db which is a replica of Kl
 ```
 
 
-### Live demo -
-
-http://carsapitest.azurewebsites.net
-
-### Live Swagger end point
-
-http://carsapitest.azurewebsites.net/swagger
 
 
